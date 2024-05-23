@@ -1,0 +1,389 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #16233b;
+  overflow: auto;
+}
+
+.my-header {
+  background-color: #16233b;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.my-header h1 {
+  color: #e8eaed;
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -10px;
+}
+
+#backIcon {
+  position: absolute;
+  left: 20px;
+}
+
+#cartIcon {
+  position: absolute;
+  right: 20px;
+}
+
+.tickets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #16233b;
+  padding: 5px 20px; /* Reduced padding */
+  margin-top: 10px; /* Added margin-top */
+}
+
+.tickets header {
+  color: #e8eaed;
+  cursor: pointer;
+  padding: 5px 10px;
+  position: relative;
+  font-weight: bold;
+}
+
+.tickets header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color:  #0079c1;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tickets header:hover::after,
+.tickets header.active::after {
+  transform: scaleX(1);
+}
+
+#activeTickets {
+  margin-right: auto;
+}
+
+#myTickets {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#buyTickets {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .tickets {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 0; /* Reduced padding */
+    margin-top: 10px; /* Added margin-top */
+  }
+
+  .tickets header {
+    margin: 5px;
+    padding: 5px 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  #activeTickets {
+    margin-right: 0;
+    order: 1;
+  }
+
+  #myTickets {
+    margin: 0;
+    order: 2;
+  }
+
+  #buyTickets {
+    margin-left: 0;
+    order: 3;
+  }
+
+  .tickets header::after {
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+  }
+
+  .tickets header:hover::after,
+  .tickets header.active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+
+.white-box {
+  background-color: #ffffff;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 200px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#qrcode {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#qrcode img {
+  width: 200px;
+  height: 200px;
+}
+
+#qrcode h2 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 27px;
+}
+
+.content {
+  flex-grow: 1;
+  overflow: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.price-info {
+  margin-top: 5px;
+}
+
+.price-info hr {
+  border: none;
+  border-top: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.price-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 325px;
+  margin: 0 auto;
+}
+
+.quantity {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.validity {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.alternating-text {
+  background-color: #ff99cc;
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  width: 310px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alternating-text span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  font-size: medium;
+}
+.alternating-text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; /* Adjust the width and height of the circles as needed */
+  height: 200px;
+  border-radius: 50%; /* Ensures the element is circular */
+  background-color: rgba(255, 255, 255, 0.5); /* Color and transparency of the circles */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twitch {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.alternating-text {
+  /* ... (previous CSS code for .alternating-text remains the same) ... */
+  animation: spin 2s linear infinite, twitch 0.5s ease-in-out infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .white-box {
+    width: 80%;
+    padding: 20px;
+    min-height: calc(90vh - 150px);
+    margin-bottom: 20px;
+  }
+
+  #qrcode h2 {
+    margin-bottom: 10px;
+  }
+
+  .price-info {
+    margin-top: 3px;
+  }
+
+  .price-info hr {
+    margin-bottom: 1px;
+  }
+
+  .quantity,
+  .price {
+    font-size: 14px;
+  }
+
+  .validity {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  
+}
+
+/* ... (previous CSS code remains the same) ... */
+
+.expiration-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 80%;
+  max-width: 325px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expiration-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.expiration-time {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ... (previous CSS code remains the same) ... */
+
+@media screen and (max-width: 600px) {
+  /* ... (previous media query CSS code remains the same) ... */
+
+  .expiration-label,
+  .expiration-time {
+    font-size: 12px;
+  }
+}
+
+/* ... (previous CSS code remains the same) ... */
+
+.code-container {
+  margin-top: 50px;
+  text-align: center;
+  background-color: #D3D3D3;
+  border-radius: 20px;
+  height: 32px;
+}
+
+.code {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px;
+}
+
+/* ... (previous CSS code remains the same) ... */
+
+@media screen and (max-width: 600px) {
+  /* ... (previous media query CSS code remains the same) ... */
+
+  .code {
+    font-size: 14px;
+  }
+}
+
+/* ... (previous CSS code remains the same) ... */
+
+.more-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.more-details span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: #009879;
+}
+
+.more-details svg {
+  width: 20px;
+  height: 20px;
+  fill: #009879;
+}
+
+/* ... (previous CSS code remains the same) ... */
+
+@media screen and (max-width: 600px) {
+  /* ... (previous media query CSS code remains the same) ... */
+
+  .more-details span {
+    font-size: 14px;
+  }
+}

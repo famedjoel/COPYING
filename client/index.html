@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ticket System</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="192.png">
+</head>
+<body>
+
+    <header class="my-header">
+        <h1>Tickets</h1>
+        <div class="svg-icons">
+            <svg id="backIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+            <svg id="cartIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+        </div>
+    </header>
+    
+
+<section class="tickets">
+<header id="activeTickets" class="active">Active Tickets</header>
+<header id="myTickets">My Tickets</header>
+<header id="buyTickets">Buy Tickets</header>
+</section>
+
+<div class="white-box">
+    <div id="qrcode">
+        <img src="fake.png" alt="Fake QR Code">
+        <h2>Gold 7 Day MegaRider</h2>
+      </div>
+      <div class="content">
+        <div class="price-info">
+            <hr>
+            <div class="price-details">
+              <p class="quantity">1 Adult</p>
+              <p class="price">£32.00</p>
+            </div>
+            <hr>
+            <p class="validity">Valid from: 00:00, 15 May 2024</p>
+            <div id="alternatingText" class="alternating-text">
+                <span id="textSpan">create</span>
+              </div>
+              <div class="expiration-container">
+                <span class="expiration-label">Ticket expires in</span>
+                <span id="expirationTime" class="expiration-time"></span>
+              </div>
+              <div class="code-container">
+                <p class="code">2506-20240410055145-485</p>
+              </div>
+              <div class="more-details">
+                <span>More details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+              </div>
+          </div>
+      </div>
+  </div>
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+<!-- .white-box {
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 200px);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #qrcode {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #qrcode img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #qrcode h2 {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    font-size: 27px;
+  }
+  
+  .content {
+    flex-grow: 1;
+    overflow: auto;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .price-info {
+    margin-top: 10px;
+  }
+  
+  .price-info hr {
+    border: none;
+    border-top: 1px solid black;
+    margin-bottom: 20px;
+  }
+  
+  .price-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .quantity {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .price {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .white-box {
+      width: 80%;
+      padding: 20px;
+      min-height: calc(90vh - 150px);
+      margin-bottom: 20px;
+    }
+  
+    .price-info {
+      margin-bottom: 5px;
+    }
+  
+    .price-info hr {
+      margin-bottom: 1px;
+    }
+  
+    .quantity,
+    .price {
+      font-size: 14px;
+    }
+  } -->
